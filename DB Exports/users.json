@@ -1,0 +1,17 @@
+[{
+  "_id": {
+    "$oid": "60759ddfdd49e77cf423a337"
+  },
+  "role": "admin",
+  "name": "Test Beny",
+  "email": "testbeny@gmail.com",
+  "password": "$2a$10$Xpp6P6P4rvICEXfbtO5IrOZl9dJA8ArP.Ikk6CFXyfl12XiDBROGK",
+  "avatar": {
+    "public_id": "avatars/yeovflqrrscuzosrymp3",
+    "url": "https://res.cloudinary.com/disb9f0za/image/upload/v1618320863/avatars/yeovflqrrscuzosrymp3.jpg"
+  },
+  "createdAt": {
+    "$date": "2021-04-13T13:34:23.820Z"
+  },
+  "__v": 0
+}]

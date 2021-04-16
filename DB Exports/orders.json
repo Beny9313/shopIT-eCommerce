@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "6076fc8a390fb590e0f28b6d"
+  },
+  "itemsPrice": 253.98,
+  "taxPrice": 12.7,
+  "shippingPrice": 0,
+  "totalPrice": 266.68,
+  "orderStatus": "Delivered",
+  "orderItems": [
+    {
+      "_id": {
+        "$oid": "6076fc8a390fb590e0f28b6e"
+      },
+      "product": {
+        "$oid": "605e6a064ec03c0109a8766b"
+      },
+      "name": "Apple AirPods with Charging Case (Wired)",
+      "price": 126.99,
+      "image": "https://res.cloudinary.com/bookit/image/upload/v1606231282/products/airpords_e5cqqr.jpg",
+      "quantity": 2
+    }
+  ],
+  "shippingInfo": {
+    "address": "Test Address",
+    "city": "Test City",
+    "phoneNo": "0000",
+    "postalCode": "1111",
+    "country": "Bulgaria"
+  },
+  "paymentInfo": {
+    "id": "pi_1Ig9jXLyCCSMTvaAP4UyEYKC",
+    "status": "succeeded"
+  },
+  "paidAt": {
+    "$date": "2021-04-14T14:30:34.173Z"
+  },
+  "user": {
+    "$oid": "60759ddfdd49e77cf423a337"
+  },
+  "createdAt": {
+    "$date": "2021-04-14T14:30:34.182Z"
+  },
+  "__v": 0,
+  "deliveredAt": {
+    "$date": "2021-04-14T14:31:25.125Z"
+  }
+}]

@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "full ecommerce site using mern",
   "main": "server.js",
+  "engines": {
+    "node": "14.14.0"
+  },
   "scripts": {
     "start": "SET node backend/server.js",
     "dev": "SET NODE_ENV=DEVELOPMENT& nodemon backend/server",

@@ -1,12 +1,12 @@
 # ShopIT E-commerce Project
 
-> Complete E-commerce site built with Node.js, React, Redux, Express, MongoDB
+> Proiect complet de E-commerce construit folosind tehnologiile Node.js, React, Redux, Express, MongoDB
 
-This project was implemented based on this course : [MERN Stack Full Ecommerce Site - Using React, Redux, Node.js](https://www.udemy.com/course/3678044)
+Proiectul se bazeaza pe urmatorul curs : [MERN Stack Full Ecommerce Site - Using React, Redux, Node.js](https://www.udemy.com/course/3678044)
 
 ### Env Variables
 
-Add your config variables values in the config.env file in backend/config folder as shown in the course.
+A se adauga variabilele de configurare in fisierul config.env situat in backend/config, exemplificat in curs.
 
 ### Install Dependencies (Frontend)
 
@@ -19,13 +19,4 @@ npm i
 
 ```
 npm i
-```
-
-### Seed Database
-
-Use the following commeand to put some dummy products in that database.
-Run it in the root folder.
-
-```
-npm run seeder
 ```

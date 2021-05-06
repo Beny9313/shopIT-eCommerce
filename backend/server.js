@@ -13,7 +13,7 @@ process.on("uncaughtException", err => {
 
 // Setting up config file
 //if (process.env.NODE_ENV !== "PRODUCTION")
-  require("dotenv").config({ path: "backend/config/config.env" });
+require("dotenv").config({ path: "backend/config/config.env" });
 
 // dotenv.config({ path: 'backend/config/config.env' })
 
@@ -29,7 +29,7 @@ cloudinary.config({
 
 const server = app.listen(process.env.PORT, () => {
   console.log(
-    `Server started on PORT: ${process.env.PORT} in ${process.env.NODE_ENV} mode.`
+    `Server-ul s-a pornit pe PORT-ul: ${process.env.PORT} în modul de ${process.env.NODE_ENV} .`
   );
 });
 

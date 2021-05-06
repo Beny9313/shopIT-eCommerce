@@ -40,7 +40,7 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
 
 // Get all products   =>   /api/v1/products?keyword=apple
 exports.getProducts = catchAsyncErrors(async (req, res, next) => {
-  const resPerPage = 4;
+  const resPerPage = 6;
   const productsCount = await Product.countDocuments();
 
   const apiFeatures = new APIFeatures(Product.find(), req.query)
@@ -48,7 +48,6 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
     .filter();
 
   let products = await apiFeatures.query;
-  console.log(products);
   let filteredProductsCount = products.length;
 
   apiFeatures.pagination(resPerPage);
@@ -66,7 +65,6 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
 // Get all products (Admin)  =>   /api/v1/admin/products
 exports.getAdminProducts = catchAsyncErrors(async (req, res, next) => {
   const products = await Product.find();
-  console.log(products);
 
   res.status(200).json({
     success: true,

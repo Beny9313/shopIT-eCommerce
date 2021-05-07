@@ -26,6 +26,7 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
       public_id: result.public_id,
       url: result.secure_url,
     },
+    consent,
   });
 
   sendToken(user, 200, res);
@@ -170,6 +171,7 @@ exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
   const newUserData = {
     name: req.body.name,
     email: req.body.email,
+    consent: req.body.consent,
   };
 
   // Update avatar
@@ -227,6 +229,41 @@ exports.allUsers = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
+// Get all subscribed users => /api/v1/admin/user/subscribed
+/* exports.subsUsers = catchAsyncErrors(async (req, res, next) => {
+  const users = await User.find({ consent: "true" });
+
+    res.status(200).json({
+    success: true,
+    users,
+  });
+
+  users.forEach(user => {
+
+  const message = `Token-ul Dvs. de resetarea este, după cum urmează:\n\n${resetUrl}\n\nDacă nu ați solicitat acest email, ignorați-l`;
+
+  try {
+    await sendEmail({
+      email: user.email,
+      subject: "Recuperarea parolei de pe ShopIT",
+      message,
+    });
+
+    res.status(200).json({
+      success: true,
+      message: `Email-ul a fost trimis către: ${user.email}`,
+    });
+  } catch (error) {
+    user.resetPasswordToken = undefined;
+    user.resetPasswordExpire = undefined;
+
+    await user.save({ validateBeforeSave: false });
+
+    return next(new ErrorHandler(error.message, 500));
+  }
+});
+}); */
+
 // Get user details   =>   /api/v1/admin/user/:id
 exports.getUserDetails = catchAsyncErrors(async (req, res, next) => {
   const user = await User.findById(req.params.id);
@@ -251,6 +288,7 @@ exports.updateUser = catchAsyncErrors(async (req, res, next) => {
     name: req.body.name,
     email: req.body.email,
     role: req.body.role,
+    consent: req.body.consent,
   };
 
   const user = await User.findByIdAndUpdate(req.params.id, newUserData, {

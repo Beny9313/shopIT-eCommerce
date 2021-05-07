@@ -1,5 +1,7 @@
 import axios from "axios";
 
+import { useSelector } from "react-redux";
+
 import {
   ALL_PRODUCTS_REQUEST,
   ALL_PRODUCTS_SUCCESS,

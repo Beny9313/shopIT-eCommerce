@@ -16,6 +16,7 @@ const UpdateUser = ({ history, match }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("");
+  const [consent, setConsent] = useState(false);
 
   const alert = useAlert();
   const dispatch = useDispatch();
@@ -33,6 +34,7 @@ const UpdateUser = ({ history, match }) => {
       setName(user.name);
       setEmail(user.email);
       setRole(user.role);
+      setConsent(user.consent);
     }
 
     if (error) {
@@ -58,6 +60,7 @@ const UpdateUser = ({ history, match }) => {
     formData.set("name", name);
     formData.set("email", email);
     formData.set("role", role);
+    formData.set("consent", consent);
 
     dispatch(updateUser(user._id, formData));
   };
@@ -113,6 +116,21 @@ const UpdateUser = ({ history, match }) => {
                     <option value="user">user</option>
                     <option value="admin">admin</option>
                   </select>
+                </div>
+
+                <div className="form-group-checkbox">
+                  <label htmlFor="consent">
+                    Vreau sa primesc email atunci cand se adauga un produs nou
+                  </label>
+                  <br />
+                  <input
+                    type="checkbox"
+                    id="consent_field"
+                    className="form-control-checkbox mt-2"
+                    name="consent"
+                    defaultChecked={consent}
+                    onChange={e => setConsent(!consent)}
+                  />
                 </div>
 
                 <button

@@ -32,6 +32,9 @@ const userSchema = new mongoose.Schema({
       required: true,
     },
   },
+  consent: {
+    type: Boolean,
+  },
   role: {
     type: String,
     default: "user",

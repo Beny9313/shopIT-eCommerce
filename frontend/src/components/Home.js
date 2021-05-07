@@ -64,6 +64,7 @@ const Home = ({ match }) => {
   const resetFilters = () => {
     setCategory("");
     setRating(0);
+    setPrice([1, 1000]);
   };
 
   let count = productsCount;

@@ -61,6 +61,11 @@ const UsersList = ({ history }) => {
           sort: "asc",
         },
         {
+          label: "Newsletter?",
+          field: "consent",
+          sort: "asc",
+        },
+        {
           label: "Actions",
           field: "actions",
         },
@@ -74,6 +79,7 @@ const UsersList = ({ history }) => {
         name: user.name,
         email: user.email,
         role: user.role,
+        consent: user.consent ? "DA" : "NU",
 
         actions: (
           <Fragment>
@@ -93,6 +99,8 @@ const UsersList = ({ history }) => {
         ),
       });
     });
+
+    console.log(data);
 
     return data;
   };

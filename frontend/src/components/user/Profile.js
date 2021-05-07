@@ -42,6 +42,9 @@ const Profile = () => {
               <h4>Adresă de email</h4>
               <p>{user.email}</p>
 
+              <h4>Subscris la Newsletter?</h4>
+              <p>{user.consent ? "DA" : "NU"}</p>
+
               <h4>Membru din</h4>
               <p>{String(user.createdAt).substring(0, 10)}</p>
 

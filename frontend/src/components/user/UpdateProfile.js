@@ -15,6 +15,7 @@ const UpdateProfile = ({ history }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [avatar, setAvatar] = useState("");
+  const [consent, setConsent] = useState(false);
   const [avatarPreview, setAvatarPreview] = useState(
     "/images/default_avatar.jpg"
   );
@@ -56,6 +57,7 @@ const UpdateProfile = ({ history }) => {
     formData.set("name", name);
     formData.set("email", email);
     formData.set("avatar", avatar);
+    formData.set("consent", consent);
 
     dispatch(updateProfile(formData));
   };
@@ -135,6 +137,21 @@ const UpdateProfile = ({ history }) => {
                   </label>
                 </div>
               </div>
+            </div>
+
+            <div className="form-group-checkbox">
+              <label htmlFor="consent">
+                Vreau sa primesc email atunci cand se adauga un produs nou
+              </label>
+              <br />
+              <input
+                type="checkbox"
+                id="consent_field"
+                className="form-control-checkbox mt-2"
+                name="consent"
+                defaultChecked={consent}
+                onChange={e => setConsent(!consent)}
+              />
             </div>
 
             <button

@@ -11,9 +11,10 @@ const Register = ({ history }) => {
     name: "",
     email: "",
     password: "",
+    consent: false,
   });
 
-  const { name, email, password } = user;
+  const { name, email, password, consent } = user;
 
   const [avatar, setAvatar] = useState("");
   const [avatarPreview, setAvatarPreview] = useState(
@@ -44,6 +45,7 @@ const Register = ({ history }) => {
     formData.set("email", email);
     formData.set("password", password);
     formData.set("avatar", avatar);
+    formData.set("consent", consent);
 
     dispatch(register(formData));
   };
@@ -142,13 +144,27 @@ const Register = ({ history }) => {
               </div>
             </div>
 
+            <div className="form-group">
+              <label htmlFor="consent">
+                Vreau sa primesc email atunci cand se adauga un produs nou
+              </label>
+              <input
+                type="checkbox"
+                id="consent_field"
+                className="form-control-checkbox mt-2"
+                name="consent"
+                defaultChecked={consent}
+                onChange={onChange}
+              />
+            </div>
+
             <button
               id="register_button"
               type="submit"
               className="btn btn-block py-3"
               disabled={loading ? true : false}
             >
-              ÎNREGISTERARE
+              ÎNREGISTRARE
             </button>
           </form>
         </div>

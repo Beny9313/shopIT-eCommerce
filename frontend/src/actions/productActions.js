@@ -56,7 +56,6 @@ export const getProducts = (
       type: ALL_PRODUCTS_SUCCESS,
       payload: data,
     });
-    console.log(data);
   } catch (error) {
     dispatch({
       type: ALL_PRODUCTS_FAIL,

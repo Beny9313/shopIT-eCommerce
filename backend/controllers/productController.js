@@ -1,9 +1,12 @@
 const Product = require("../models/product");
+const User = require("../models/user");
 
 const ErrorHandler = require("../utils/errorHandler");
 const catchAsyncErrors = require("../middlewares/catchAsyncErrors");
 const APIFeatures = require("../utils/apiFeatures");
 const cloudinary = require("cloudinary");
+
+const sendEmail = require("../utils/sendEmail");
 
 // Create new product   =>   /api/v1/admin/product/new
 exports.newProduct = catchAsyncErrors(async (req, res, next) => {
@@ -31,6 +34,31 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
   req.body.user = req.user.id;
 
   const product = await Product.create(req.body);
+
+  // Get all subscribed users => /api/v1/admin/user/subscribed
+
+  const users = await User.find({ consent: "true" });
+  let subbedEmails = "";
+
+  users.forEach(user => {
+    subbedEmails += `${user.email}, `;
+  });
+
+  const message = `Bună ziua! \n\n Vă anunțăm, că am adăugat un nou produs (${product.name}) in magazinul nostru online\n\n Puteți accesa linkul următor pentru a vedea mai multe detalii
+  \n\n http://localhost:3000/product/${product._id} \n\n Vă dorim o zi frumoasă! `;
+
+  try {
+    await sendEmail({
+      email: subbedEmails,
+      subject: "A apărut un nou produs pe ShopIT! Profită acum!",
+      message,
+    });
+  } catch (error) {
+    console.log("Am intrat la Eroare");
+    //await user.save({ validateBeforeSave: false });
+
+    return next(new ErrorHandler(error.message, 500));
+  }
 
   res.status(201).json({
     success: true,

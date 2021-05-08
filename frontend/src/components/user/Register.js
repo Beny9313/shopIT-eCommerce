@@ -11,10 +11,11 @@ const Register = ({ history }) => {
     name: "",
     email: "",
     password: "",
-    consent: false,
   });
 
-  const { name, email, password, consent } = user;
+  const [consent, setConsent] = useState(false);
+
+  const { name, email, password } = user;
 
   const [avatar, setAvatar] = useState("");
   const [avatarPreview, setAvatarPreview] = useState(
@@ -154,7 +155,7 @@ const Register = ({ history }) => {
                 className="form-control-checkbox mt-2"
                 name="consent"
                 defaultChecked={consent}
-                onChange={onChange}
+                onChange={e => setConsent(!consent)}
               />
             </div>
 

@@ -8,6 +8,7 @@ import {
   updateProfile,
   loadUser,
   clearErrors,
+  useConsent,
 } from "../../actions/userActions";
 import { UPDATE_PROFILE_RESET } from "../../constants/userConstants";
 
@@ -15,7 +16,7 @@ const UpdateProfile = ({ history }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [avatar, setAvatar] = useState("");
-  const [consent, setConsent] = useState(false);
+  const [consent, checkConsent] = useConsent(false);
   const [avatarPreview, setAvatarPreview] = useState(
     "/images/default_avatar.jpg"
   );
@@ -150,7 +151,7 @@ const UpdateProfile = ({ history }) => {
                 className="form-control-checkbox mt-2"
                 name="consent"
                 defaultChecked={consent}
-                onChange={e => setConsent(!consent)}
+                onChange={checkConsent}
               />
             </div>
 

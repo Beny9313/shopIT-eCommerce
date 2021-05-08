@@ -16,7 +16,7 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
     crop: "scale",
   });
 
-  const { name, email, password } = req.body;
+  const { name, email, password, consent } = req.body;
 
   const user = await User.create({
     name,
@@ -32,7 +32,7 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
   sendToken(user, 200, res);
 });
 
-// Login User  =>  /a[i/v1/login
+// Login User  =>  /api/v1/login
 exports.loginUser = catchAsyncErrors(async (req, res, next) => {
   const { email, password } = req.body;
 
@@ -228,41 +228,6 @@ exports.allUsers = catchAsyncErrors(async (req, res, next) => {
     users,
   });
 });
-
-// Get all subscribed users => /api/v1/admin/user/subscribed
-/* exports.subsUsers = catchAsyncErrors(async (req, res, next) => {
-  const users = await User.find({ consent: "true" });
-
-    res.status(200).json({
-    success: true,
-    users,
-  });
-
-  users.forEach(user => {
-
-  const message = `Token-ul Dvs. de resetarea este, după cum urmează:\n\n${resetUrl}\n\nDacă nu ați solicitat acest email, ignorați-l`;
-
-  try {
-    await sendEmail({
-      email: user.email,
-      subject: "Recuperarea parolei de pe ShopIT",
-      message,
-    });
-
-    res.status(200).json({
-      success: true,
-      message: `Email-ul a fost trimis către: ${user.email}`,
-    });
-  } catch (error) {
-    user.resetPasswordToken = undefined;
-    user.resetPasswordExpire = undefined;
-
-    await user.save({ validateBeforeSave: false });
-
-    return next(new ErrorHandler(error.message, 500));
-  }
-});
-}); */
 
 // Get user details   =>   /api/v1/admin/user/:id
 exports.getUserDetails = catchAsyncErrors(async (req, res, next) => {

@@ -100,8 +100,6 @@ const UsersList = ({ history }) => {
       });
     });
 
-    console.log(data);
-
     return data;
   };
 

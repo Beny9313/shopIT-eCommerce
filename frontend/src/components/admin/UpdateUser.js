@@ -27,14 +27,12 @@ const UpdateUser = ({ history, match }) => {
   const userId = match.params.id;
 
   useEffect(() => {
-    console.log(user && user._id !== userId);
     if (user && user._id !== userId) {
       dispatch(getUserDetails(userId));
     } else {
       setName(user.name);
       setEmail(user.email);
       setRole(user.role);
-      setConsent(user.consent);
     }
 
     if (error) {
@@ -52,6 +50,11 @@ const UpdateUser = ({ history, match }) => {
       });
     }
   }, [dispatch, alert, error, history, isUpdated, userId, user]);
+
+  const checkConsent = React.useCallback(() => setConsent(!consent), [
+    consent,
+    setConsent,
+  ]);
 
   const submitHandler = e => {
     e.preventDefault();
@@ -129,7 +132,7 @@ const UpdateUser = ({ history, match }) => {
                     className="form-control-checkbox mt-2"
                     name="consent"
                     defaultChecked={consent}
-                    onChange={e => setConsent(!consent)}
+                    onChange={checkConsent}
                   />
                 </div>
 

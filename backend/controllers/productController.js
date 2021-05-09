@@ -44,14 +44,23 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
     subbedEmails += `${user.email}, `;
   });
 
-  const message = `Bună ziua! \n\n Vă anunțăm, că am adăugat un nou produs (${product.name}) in magazinul nostru online\n\n Puteți accesa linkul următor pentru a vedea mai multe detalii
-  \n\n http://localhost:3000/product/${product._id} \n\n Vă dorim o zi frumoasă! `;
+  const message = `Bună ziua! \n\n Vă anunțăm, că am adăugat un nou produs ( ${product.name} ) in magazinul nostru online \n\n Puteți accesa linkul următor pentru a vedea mai multe detalii
+  \n\n https://shopit-ecommerce-beny.herokuapp.com/product/${product._id} \n\n Vă dorim o zi frumoasă! `;
+  const html =
+    '<p>Bună ziua!</p> <br /><p>Vă anunțăm, că am adăugat un nou produs <a href = "https://shopit-ecommerce-beny.herokuapp.com/product/' +
+    product._id +
+    '">( ' +
+    product.name +
+    ' )</a> in magazinul nostru online</p> <br /><p>Puteți accesa linkul următor pentru a vedea mai multe detalii</p> <br /><a href = "https://shopit-ecommerce-beny.herokuapp.com/product/' +
+    product._id +
+    '"> Link la produs </a> <br /><br />Vă dorim o zi frumoasă!';
 
   try {
     await sendEmail({
       email: subbedEmails,
       subject: "A apărut un nou produs pe ShopIT! Profită acum!",
       message,
+      html,
     });
   } catch (error) {
     console.log("Am intrat la Eroare");

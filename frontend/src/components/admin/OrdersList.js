@@ -50,12 +50,12 @@ const OrdersList = ({ history }) => {
           sort: "asc",
         },
         {
-          label: "No of Items",
+          label: "Nr Elementelor",
           field: "numofItems",
           sort: "asc",
         },
         {
-          label: "Amount",
+          label: "Cantitate",
           field: "amount",
           sort: "asc",
         },
@@ -65,7 +65,7 @@ const OrdersList = ({ history }) => {
           sort: "asc",
         },
         {
-          label: "Actions",
+          label: "Acțiuni",
           field: "actions",
         },
       ],

@@ -51,22 +51,22 @@ const ProductsList = ({ history }) => {
           sort: "asc",
         },
         {
-          label: "Name",
+          label: "Nume",
           field: "name",
           sort: "asc",
         },
         {
-          label: "Price",
+          label: "Preț",
           field: "price",
           sort: "asc",
         },
         {
-          label: "Stock",
+          label: "Stoc",
           field: "stock",
           sort: "asc",
         },
         {
-          label: "Actions",
+          label: "Acțiuni",
           field: "actions",
         },
       ],

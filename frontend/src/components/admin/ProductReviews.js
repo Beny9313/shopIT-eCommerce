@@ -57,27 +57,27 @@ const ProductReviews = () => {
     const data = {
       columns: [
         {
-          label: "Review ID",
+          label: "ID Recenzie",
           field: "id",
           sort: "asc",
         },
         {
-          label: "Rating",
+          label: "Recenzie",
           field: "rating",
           sort: "asc",
         },
         {
-          label: "Comment",
+          label: "Commentariu",
           field: "comment",
           sort: "asc",
         },
         {
-          label: "User",
+          label: "Utilizator",
           field: "user",
           sort: "asc",
         },
         {
-          label: "Actions",
+          label: "Acțiuni",
           field: "actions",
         },
       ],

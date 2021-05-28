@@ -41,12 +41,12 @@ const UsersList = ({ history }) => {
     const data = {
       columns: [
         {
-          label: "User ID",
+          label: "ID",
           field: "id",
           sort: "asc",
         },
         {
-          label: "Name",
+          label: "Nume",
           field: "name",
           sort: "asc",
         },
@@ -56,7 +56,7 @@ const UsersList = ({ history }) => {
           sort: "asc",
         },
         {
-          label: "Role",
+          label: "Rol",
           field: "role",
           sort: "asc",
         },
@@ -66,7 +66,7 @@ const UsersList = ({ history }) => {
           sort: "asc",
         },
         {
-          label: "Actions",
+          label: "Acțiuni",
           field: "actions",
         },
       ],

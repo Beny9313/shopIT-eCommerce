@@ -69,8 +69,8 @@ const ConfirmOrder = ({ history }) => {
 
                   <div className="col-4 col-lg-4 mt-4 mt-lg-0">
                     <p>
-                      {item.quantity} x {item.price} € ={" "}
-                      <b>{(item.quantity * item.price).toFixed(2)} €</b>
+                      {item.quantity} x {item.price} RON ={" "}
+                      <b>{(item.quantity * item.price).toFixed(2)} RON</b>
                     </p>
                   </div>
                 </div>
@@ -86,20 +86,20 @@ const ConfirmOrder = ({ history }) => {
             <hr />
             <p>
               Subtotal:{" "}
-              <span className="order-summary-values">{itemsPrice}€</span>
+              <span className="order-summary-values">{itemsPrice}RON</span>
             </p>
             <p>
               Livrare:{" "}
-              <span className="order-summary-values">{shippingPrice}€</span>
+              <span className="order-summary-values">{shippingPrice}RON</span>
             </p>
             <p>
-              Taxe: <span className="order-summary-values">{taxPrice}€</span>
+              Taxe: <span className="order-summary-values">{taxPrice}RON</span>
             </p>
 
             <hr />
 
             <p>
-              Total: <span className="order-summary-values">{totalPrice}€</span>
+              Total: <span className="order-summary-values">{totalPrice}RON</span>
             </p>
 
             <hr />

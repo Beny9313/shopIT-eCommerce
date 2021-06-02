@@ -89,14 +89,14 @@ const ProcessOrder = ({ match }) => {
                     {shippingDetails}
                   </p>
                   <p>
-                    <b>Suma:</b> {totalPrice}€
+                    <b>Suma:</b> {totalPrice}RON
                   </p>
 
                   <hr />
 
                   <h4 className="my-4">Plata</h4>
                   <p className={isPaid ? "greenColor" : "redColor"}>
-                    <b>{isPaid ? "PAID" : "NOT PAID"}</b>
+                    <b>{isPaid ? "PLĂTIT" : "NEPLĂTIT"}</b>
                   </p>
 
                   <h4 className="my-4">Stripe ID</h4>
@@ -139,7 +139,7 @@ const ProcessOrder = ({ match }) => {
                           </div>
 
                           <div className="col-4 col-lg-2 mt-4 mt-lg-0">
-                            <p>{item.price}€</p>
+                            <p>{item.price}RON</p>
                           </div>
 
                           <div className="col-4 col-lg-3 mt-4 mt-lg-0">

@@ -113,7 +113,7 @@ const OrderDetails = ({ match }) => {
                       </div>
 
                       <div className="col-4 col-lg-3 mt-4 mt-lg-0">
-                        <p>{item.quantity} Piece(s)</p>
+                        <p>{item.quantity} Buc</p>
                       </div>
                     </div>
                   ))}

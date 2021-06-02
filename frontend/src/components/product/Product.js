@@ -19,7 +19,7 @@ const Product = ({ product, col }) => {
             </div>
             <span id="no_of_reviews">({product.numOfReviews} Recenzii)</span>
           </div>
-          <p className="card-text">{product.price} €</p>
+          <p className="card-text">{product.price} RON</p>
           <Link
             to={`/product/${product._id}`}
             id="view_btn"

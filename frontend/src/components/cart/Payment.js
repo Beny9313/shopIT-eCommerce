@@ -162,7 +162,7 @@ const Payment = ({ history }) => {
             </div>
 
             <button id="pay_btn" type="submit" className="btn btn-block py-3">
-              Pay {` - ${orderInfo && orderInfo.totalPrice}`}
+              Plătiți în siguranță {` - ${orderInfo && orderInfo.totalPrice}`}
             </button>
           </form>
         </div>

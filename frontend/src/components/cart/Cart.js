@@ -154,7 +154,7 @@ const Cart = ({ history }) => {
                   className="btn btn-primary btn-block"
                   onClick={checkoutHandler}
                 >
-                  Check-Out
+                  Finalizare Comandă
                 </button>
               </div>
             </div>

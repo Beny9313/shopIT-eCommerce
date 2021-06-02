@@ -64,14 +64,14 @@ const OrderDetails = ({ match }) => {
                 {shippingDetails}
               </p>
               <p>
-                <b>Cantitate:</b> ${totalPrice}
+                <b>Cantitate:</b> RON{totalPrice}
               </p>
 
               <hr />
 
               <h4 className="my-4">Plata</h4>
               <p className={isPaid ? "greenColor" : "redColor"}>
-                <b>{isPaid ? "PAID" : "NOT PAID"}</b>
+                <b>{isPaid ? "PLĂTIT" : "NEPLĂTIT"}</b>
               </p>
 
               <h4 className="my-4">Statusul Comenzii:</h4>

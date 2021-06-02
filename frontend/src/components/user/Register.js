@@ -147,7 +147,7 @@ const Register = ({ history }) => {
 
             <div className="form-group">
               <label htmlFor="consent">
-                Vreau sa primesc email atunci cand se adauga un produs nou
+                Vreau să primesc email atunci când se adaugă un produs nou
               </label>
               <input
                 type="checkbox"

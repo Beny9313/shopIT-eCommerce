@@ -55,7 +55,7 @@ const Dashboard = () => {
                     <div className="card-body">
                       <div className="text-center card-font-size">
                         Suma Totală
-                        <br /> <b>{totalAmount && totalAmount.toFixed(2)} €</b>
+                        <br /> <b>{totalAmount && totalAmount.toFixed(2)} RON</b>
                       </div>
                     </div>
                   </div>

@@ -144,7 +144,7 @@ const Cart = ({ history }) => {
                         0
                       )
                       .toFixed(2)}
-                    €
+                    RON
                   </span>
                 </p>
 

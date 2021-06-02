@@ -132,7 +132,7 @@ const Cart = ({ history }) => {
                       (acc, item) => acc + Number(item.quantity),
                       0
                     )}{" "}
-                    (Units)
+                    (Unități)
                   </span>
                 </p>
                 <p>
